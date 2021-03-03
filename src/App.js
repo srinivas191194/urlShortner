@@ -6,7 +6,7 @@ function App() {
     event.preventDefault()
     let variable = document.getElementById("inputfield").value
     console.log(variable)
-    axios.post("http://localhost:8080/longurl/",{"url": variable})
+    axios.post("https://backend-urlshortner.herokuapp.com/longurl/",{"url": variable})
          .then(function(responce){console.log(responce);  setLink(responce.data)})
          .catch(function(error){console.log(error)})
     }
