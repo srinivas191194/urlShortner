@@ -21,10 +21,10 @@ public class ShortURL {
     private Long  id;
     @Column(nullable = false)
     @Builder.Default
-    private   String  domain="localhost:8080";
+    private   String  domain="backend-urlshortner.herokuapp.com";
     @Column(nullable = false)
     @Builder.Default
-    private   String protocol="http";
+    private   String protocol="https";
     @Builder.Default
     private   Boolean expired=false;
     @Column(updatable = false)

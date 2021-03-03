@@ -24,8 +24,8 @@ public class URLShorterServiceImpl implements URLShortenerService {
     public String shorten(String longUrlString) {
         Date obj = new Date();
         ShortURL shortURL = ShortURL.builder()
-                .domain("localhost:8080")
-                .protocol("http")
+                .domain("backend-urlshortner.herokuapp.com")
+                .protocol("https")
                 .expired(false)
                 .createdAt(obj)
                 .build();
