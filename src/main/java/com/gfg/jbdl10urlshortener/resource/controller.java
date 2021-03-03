@@ -16,13 +16,13 @@ import java.net.URI;
 public class controller {
     @Autowired
     private URLShortenerService urlShortenerService;
-    @CrossOrigin(origins= "http://localhost:3000")
+    @CrossOrigin(origins= "https://frontend-urlshortner.herokuapp.com")
     @PostMapping("/longurl/")
     ResponseEntity shortenUrl(@RequestBody URLShortenRequest urlShortenRequest){
         System.out.println("reached");
         return ResponseEntity.ok(urlShortenerService.shorten(urlShortenRequest.getUrl()));
     }
-    @CrossOrigin(origins= "http://localhost:3000")
+    @CrossOrigin(origins= "https://frontend-urlshortner.herokuapp.com")
     @GetMapping("{shorturl}")
     ResponseEntity getLongURL(@PathVariable("shorturl") String shorturl){
         try {
@@ -36,7 +36,7 @@ public class controller {
             return ResponseEntity.ok(e.getMessage());
         }
     }
-    @CrossOrigin(origins= "http://localhost:3000")
+    @CrossOrigin(origins= "https://frontend-urlshortner.herokuapp.com")
     @PutMapping("/shorturl/expiration")
     ResponseEntity expire(){
         urlShortenerService.expire();
